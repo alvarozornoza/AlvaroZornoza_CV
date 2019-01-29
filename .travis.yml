@@ -1,0 +1,18 @@
+sudo: required
+language: generic
+services: docker
+tex-config:
+- tex-scheme=medium
+- push-type=branch
+- build-pattern=AlvaroZornoza_CV.tex
+- packages=lipsum, blindtext, inputenc, babel, sectsty, microtype, amsmath, amsfonts, amsthm, graphicx, xcolor, geometry, attachfile, fontawesome, wrapfig, hyperref, xcolor
+env:
+  global:
+  - IS_TRAVIS=true
+  matrix:
+  - secure: rFEySlxzr7ic1HGNHyl95EKj6HBCc+DgTUeKqAbylJxy9v6DWfZts8JJ1Xv3poy0zEMthnLFLDA6r0I8FgjD7J2ka6dfRLMS8kLfK3B+mHOHtAceFnM71oOODg79gu4/fkOlBe5pYUGgsA8Z38fw6g1rSzKtGB5rzRunrCoYmZZXoACX19Dg0t2/BlO4sIgGu4+MF1yv/j31+Ctpox+BrHxA/jIHcVjP01NxtYGUgrLyoBjfc/fSArSN6zbfP9hKJj9z+KJIwXQZwaZHtfCLTjgq+gby3GDivFOwXQ3PDyK1CDi+vN/OHv2Wn5XO80irSXsxT1/a7hDaxfU6+QqHPfewjTqGTx5LR/tmTEEG7dE0eBRMCdHHX6/Av5i0TAp0funeSblCXYaiLNTAfVvyrlO8ROKCrsifH4HvAy26GzdWam7PGJHo0r0lc3RY9PkW/kxVW4S2HWn3VPgICNTbQNPQNslLIh6T4o5xd3dgBf/87rnJwz+fWKkip2t1HQHUJMASEAgSqI8eWLjPcZ5pWEYCx20BbgngFZFk4dHhxS+FnS4MCtH3Uf7IVkkWKjSwDGMzsgiif1v9DhB6O24F20noNdjYK9hvsXE99KNE78NK2mYgV5fyLGbeSvhT3C6ggNC/eOxRkSDBo34TXMNwFputo/82KKvcltdn78NQc18=
+script:
+- chmod +x .travis/travis-texbuild.sh
+- ".travis/travis-texbuild.sh"
+if:
+  commit_message =~ /^((?!Travis).)*$/
