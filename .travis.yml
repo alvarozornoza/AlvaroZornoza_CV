@@ -5,9 +5,7 @@ tex-config:
 - tex-scheme=medium
 - push-type=branch
 - build-pattern=AlvaroZornoza_CV.tex
-- packages=lipsum, blindtext, inputenc, babel, sectsty, microtype, amsmath, amsfonts,
-  amsthm, graphicx, xcolor, geometry, attachfile, fontawesome, wrapfig, hyperref,
-  xcolor
+- packages=lipsum, blindtext, inputenc, babel, sectsty, microtype, amsmath, amsfonts, amsthm, graphicx, xcolor, geometry, attachfile, fontawesome, wrapfig, hyperref, xcolor
 env:
   global:
   - IS_TRAVIS=true
