@@ -11,7 +11,7 @@ export texscheme=$(awk -F "=" '/tex-scheme/ {print $2}' "$CONFIG_FILE")
 export pushtype=$(awk -F "=" '/push-type/ {print $2}' "$CONFIG_FILE")
 # export pushtype="branch"
 # DOCKER_IMAGE="strauman/travis-latexbuild:$texscheme"
-DOCKER_IMAGE = "strauman/texlive-latexbuild:medium-2018"
+DOCKER_IMAGE="strauman/texlive-latexbuild:medium-2018"
 
 setup_git() {
   if [ "$TRAVIS" == "true" ]; then
